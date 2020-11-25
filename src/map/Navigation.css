@@ -84,8 +84,7 @@ background-position: center center;
 
 @media only screen and (max-width: 770px) {
   .nav-container {
-    top: 61px;
-    left: 10px;
+    left: 5px;
     height: 37px;
     width: 37px;
     position: absolute;
