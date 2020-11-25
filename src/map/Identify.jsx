@@ -328,7 +328,7 @@ const FeatureItem = props => {
   if (featureName === null || featureName === undefined || featureName === "" ) featureName = "N/A";
   let cql_filter = "";
  
-  const excludedKeys = ["id", "geometry","geom","extent_geom","gid", "globalid", "objectid", "bplan_gid"];
+  const excludedKeys = ["id", "geometry","geom","extent_geom","gid", "globalid", "objectid", "bplan_gid", "ogf_id", "shape"];
 
   let isSameOrigin = true;
   if (html_url !== undefined) isSameOrigin = html_url.toLowerCase().indexOf(window.location.origin.toLowerCase()) !== -1;
