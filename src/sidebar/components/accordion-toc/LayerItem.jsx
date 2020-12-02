@@ -181,7 +181,10 @@ class LayerItem extends Component {
         const extent = window.map.getView().calculateExtent(window.map.getSize());
         let visibleFeatures = [];
         layerInfo.layer.getSource().forEachFeatureInExtent(extent, function(feature){
-          visibleFeatures.push(feature);
+          if (feature.style_.fill_ !== null || feature.style_.stroke_ !== null || feature.style_.text_ !== null) {
+            visibleFeatures.push(feature);
+        }
+       
         }); 
         if (visibleFeatures.length > 0) {
           let features =  FeatureHelpers.setFeatures(visibleFeatures.concat([]), OL_DATA_TYPES.KML);
