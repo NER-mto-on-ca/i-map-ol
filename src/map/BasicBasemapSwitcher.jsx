@@ -65,6 +65,8 @@ class BasemapSwitcher extends Component {
           layer = helpers.getArcGISTiledLayer(service.url);
         } else if (service.type === "ARC_REST"){
           layer = helpers.getESRITileXYZLayer(service.url);
+        }else if (service.type === "XYZ") {
+          layer = helpers.getXYZLayer(service.url);
         }else{
           layer = new VectorLayer({source: new VectorSource()});
         }

@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import Feature from "ol/Feature";
 import * as ol from "ol";
 import { Image as ImageLayer,Tile as TileLayer, Vector as VectorLayer } from "ol/layer.js";
-import { ImageWMS, OSM, TileArcGISRest,  TileImage, Vector,XYZ} from "ol/source.js";
+import { ImageWMS, OSM, TileArcGISRest,  TileImage, Vector, XYZ} from "ol/source.js";
 
 //import {file as FileLoader} from "ol/featureloader.js";
 import { GeoJSON,WKT } from "ol/format.js"; 
@@ -146,6 +146,13 @@ export function getESRITileXYZLayer(url) {
 export function getOSMTileXYZLayer(url) {
   return new TileLayer({
     source: new OSM({ url: url + "/{z}/{x}/{y}.png" }),
+    crossOrigin: "anonymous"
+  });
+}
+
+export function getXYZLayer(url) {
+  return new TileLayer({
+    source: new XYZ({ url: url + "/{z}/{x}/{y}.png" }),
     crossOrigin: "anonymous"
   });
 }
